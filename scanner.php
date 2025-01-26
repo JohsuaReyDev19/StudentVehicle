@@ -42,7 +42,7 @@
                 <h2 class="text-lg font-medium text-gray-900 mb-4">Scan Vehicle Barcode</h2>
                 <div class="flex flex-col space-y-4">
                     <div class="flex space-x-4">
-                        <input type="text" id="barcodeInput" class="flex-1 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 pl-3" placeholder=" enter barcode..." autofocus>s
+                        <input type="text" id="barcodeInput" class="flex-1 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="Scan or enter barcode..." autofocus>
                         <button onclick="processBarcode()" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                             Process
                         </button>
@@ -57,30 +57,7 @@
                     </div>
                     <div id="interactive" class="viewport hidden"></div>
                 </div>
-                <div id="scanResult" class="mt-4 hidden">
-                    <!-- Results will be displayed here -->
-                </div>
-            </div>
-
-            <!-- Recent Logs -->
-            <div class="bg-white rounded-lg shadow-sm p-6">
-                <h2 class="text-lg font-medium text-gray-900 mb-4">Today's Logs</h2>
-                <div class="overflow-x-auto">
-                    <table class="min-w-full divide-y divide-gray-200">
-                        <thead class="bg-gray-50">
-                            <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Time</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Owner Name</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Vehicle Type</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Plate Number</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody id="logsTableBody" class="bg-white divide-y divide-gray-200">
-                            <!-- Logs will be displayed here -->
-                        </tbody>
-                    </table>
-                </div>
+                
             </div>
         </main>
     </div>

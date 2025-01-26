@@ -75,7 +75,8 @@
                                         <div class="mt-2 text-sm text-green-700">
                                             <p>Vehicle registered successfully!</p>
                                             <p>Barcode:</p>
-                                            <svg id="barcode"></svg>
+                                            <canvas id="barcodeCanvas"></canvas>
+                                            <a id="downloadBarcode" class="text-blue-500 hover:underline mt-2 block" download="barcode.png">Download Barcode</a>
                                         </div>
                                     </div>
                                 </div>
@@ -83,13 +84,18 @@
                         `);
 
                         // Generate barcode using JsBarcode
-                        JsBarcode("#barcode", response.data.barcode, {
+                        const canvas = document.getElementById('barcodeCanvas');
+                        JsBarcode(canvas, response.data.barcode, {
                             format: "CODE128",
                             lineColor: "#000",
                             width: 2,
                             height: 40,
                             displayValue: true
                         });
+
+                        // Prepare barcode for download
+                        const downloadLink = document.getElementById('downloadBarcode');
+                        downloadLink.href = canvas.toDataURL('image/png');
 
                         $('#registrationForm')[0].reset();
                     } else {
